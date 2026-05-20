@@ -57,21 +57,14 @@ function ContactPage() {
       setIsSubmitting(true)
 
       try {
-        // Vi skickar mailet med samma EmailJS-inställningar som bokningssidan
+        // Vi skickar mailet med din nya, korta mall för snabbförfrågan!
         await emailjs.send(
           'service_bfrat0o',    // Ditt Service ID
-          'template_be7a8nc',   // Ditt Template ID (Du kanske vill skapa en separat mall i EmailJS för snabbförfrågan framöver)
+          'template_h0uv31g',   // Ditt nya Template ID för snabbförfrågan
           {
             name: formData.name,
             phone: formData.phone,
             message: formData.message,
-            // Eftersom mallen kanske förväntar sig fler fält från bokningssidan, 
-            // skickar vi med dem som tomma strängar för säkerhets skull.
-            email: 'Ingen e-post angiven (Snabbförfrågan)',
-            service: 'Snabbförfrågan från kontaktsidan',
-            regnr: '-',
-            brand: '-',
-            model: '-',
           },
           '2wCuwEq3KZK9l2zAb'   // Din Public Key
         )
